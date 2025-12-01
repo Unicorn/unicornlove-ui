@@ -125,6 +125,7 @@
     "@types/node": "~20.0.0",
     "@types/react": "~19.1.0",
     "@vitejs/plugin-react": "^5.1.1",
+    "esbuild": "^0.27.0",
     "expo-document-picker": "~14.0.7",
     "expo-image-picker": "~17.0.8",
     "jsdom": "^27.2.0",
