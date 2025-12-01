@@ -4,7 +4,7 @@ import { readFileSync } from 'fs'
 
 const pkg = JSON.parse(readFileSync('package.json', 'utf-8'))
 
-// Get all external dependencies
+// Get all external dependencies - include all react-native, expo, and other optional deps
 const external = [
   'react',
   'react-dom',
@@ -18,6 +18,7 @@ const external = [
   'react-native-gifted-charts',
   'react-native-svg',
   'react-window',
+  'react-native-gesture-handler',
   ...Object.keys(pkg.dependencies || {}),
   ...Object.keys(pkg.peerDependencies || {}),
   ...Object.keys(pkg.optionalDependencies || {}),
