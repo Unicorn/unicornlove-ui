@@ -109,7 +109,6 @@
     "awesome-phonenumber": "~7.5.0",
     "expo-router": "~6.0.14",
     "moti": "~0.25.3",
-    "react-dom": "19.1.0",
     "react-dropzone": "~14.3.8",
     "react-native-reanimated": "~4.1.2"
   },
@@ -123,6 +122,8 @@
     "@types/react": "~19.1.0",
     "@vitejs/plugin-react": "^5.1.1",
     "jsdom": "^27.2.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "tsup": "^8.0.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.10"
