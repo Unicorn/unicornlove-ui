@@ -71,12 +71,12 @@
     "release:dry-run": "semantic-release --dry-run"
   },
   "peerDependencies": {
-    "react": ">=18.0.0",
-    "react-native": ">=0.74.0",
-    "expo": ">=51.0.0",
-    "tamagui": ">=1.138.0",
     "@tamagui/core": ">=1.138.0",
+    "expo": ">=51.0.0",
+    "react": ">=18.0.0",
     "react-hook-form": ">=7.0.0",
+    "react-native": ">=0.74.0",
+    "tamagui": ">=1.138.0",
     "zod": ">=3.0.0"
   },
   "peerDependenciesMeta": {
@@ -106,18 +106,20 @@
     "@tiptap/react": "^2.27.1",
     "@tiptap/starter-kit": "^2.27.1",
     "@ts-react/form": "~1.6.4",
+    "awesome-phonenumber": "~7.5.0",
     "expo-router": "~6.0.14",
     "moti": "~0.25.3",
     "react-dom": "19.1.0",
     "react-dropzone": "~14.3.8",
-    "react-native-reanimated": "~4.1.2",
-    "awesome-phonenumber": "~7.5.0"
+    "react-native-reanimated": "~4.1.2"
   },
   "devDependencies": {
     "@biomejs/biome": "~2.3.6",
+    "@tamagui/config": "^1.138.6",
     "@testing-library/jest-dom": "^6.4.2",
     "@types/node": "~20.0.0",
     "@types/react": "~19.1.0",
+    "@vitejs/plugin-react": "^5.1.1",
     "tsup": "^8.0.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.10"
