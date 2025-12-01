@@ -20,15 +20,18 @@ await build({
     'src/types/geographic.ts',
     'src/types/phone.ts',
   ],
-  bundle: false,
+  bundle: true,
   format: 'esm',
   outdir: 'dist',
   external,
   sourcemap: true,
   platform: 'neutral',
   target: 'es2020',
-}).catch(() => {
-  console.error('Build failed')
+  outExtension: {
+    '.js': '.mjs',
+  },
+}).catch((error) => {
+  console.error('Build failed:', error.message)
   process.exit(1)
 })
 
