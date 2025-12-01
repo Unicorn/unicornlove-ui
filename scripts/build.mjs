@@ -1,28 +1,49 @@
 #!/usr/bin/env node
 import { build } from 'esbuild'
 import { readFileSync } from 'fs'
+import { resolve } from 'path'
 
 const pkg = JSON.parse(readFileSync('package.json', 'utf-8'))
 
-// Get all external dependencies - include all react-native, expo, and other optional deps
+// Collect all packages to mark as external
 const external = [
   'react',
   'react-dom',
   'react-native',
   'tamagui',
   '@tamagui/core',
-  'fuse.js',
   'mapbox-gl',
-  'react-native-safe-area-context',
-  'expo-linking',
-  'react-native-gifted-charts',
-  'react-native-svg',
-  'react-window',
-  'react-native-gesture-handler',
-  ...Object.keys(pkg.dependencies || {}),
-  ...Object.keys(pkg.peerDependencies || {}),
-  ...Object.keys(pkg.optionalDependencies || {}),
 ]
+
+// Add all dependencies and peerDependencies
+const allDeps = {
+  ...(pkg.dependencies || {}),
+  ...(pkg.peerDependencies || {}),
+}
+
+// Add specific React Native and Expo packages that might be imported
+const rnPackages = [
+  'react-native-safe-area-context',
+  'react-native-gesture-handler',
+  'react-native-svg',
+  'react-native-web',
+  'react-native-gifted-charts',
+  'expo-linking',
+  'expo-router',
+]
+
+// Add other packages that might be imported but not in dependencies
+const otherPackages = [
+  'fuse.js',
+  'react-window',
+  '@tamagui/config',
+  '@tamagui/config/v4',
+]
+
+// Add all dependency keys, RN packages, and other packages
+external.push(...Object.keys(allDeps))
+external.push(...rnPackages)
+external.push(...otherPackages)
 
 await build({
   entryPoints: [
@@ -40,12 +61,10 @@ await build({
   outExtension: {
     '.js': '.mjs',
   },
-  loader: {
-    '.css': 'empty',
-  },
 }).catch((error) => {
   console.error('Build failed:', error.message)
   process.exit(1)
 })
 
 console.log('✅ Build complete!')
+

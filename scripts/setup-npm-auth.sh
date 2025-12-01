@@ -52,3 +52,4 @@ fi
 echo ""
 echo "✅ NPM authentication set up successfully!"
 echo "   Token cached in ~/.npmrc (secure permissions: 600)"
+
