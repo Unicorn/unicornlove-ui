@@ -117,9 +117,12 @@
     "@biomejs/biome": "~2.3.6",
     "@tamagui/config": "^1.138.6",
     "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "~20.0.0",
     "@types/react": "~19.1.0",
     "@vitejs/plugin-react": "^5.1.1",
+    "jsdom": "^27.2.0",
     "tsup": "^8.0.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.10"
