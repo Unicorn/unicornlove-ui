@@ -54,7 +54,7 @@
     "*.css"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "node scripts/build.mjs",
     "prepublishOnly": "pnpm build",
     "check": "tamagui check",
     "check:type": "tsc --noEmit",
